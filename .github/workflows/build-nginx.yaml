@@ -26,5 +26,5 @@ jobs:
       env:
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        docker build -t "$IMAGE_TAG" .
+        docker build --build-arg PORT="$PORT" -t "$IMAGE_TAG" .
         echo "::set-output name=image::$IMAGE_TAG"
